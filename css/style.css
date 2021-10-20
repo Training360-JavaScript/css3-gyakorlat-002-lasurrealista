@@ -1,18 +1,13 @@
-/*
-FIGYELEM: a __selector__ szó helyére kell beírni a jó szelektorokat!
-*/
-
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-
 /* 1: a html és a body elem */
-__selector__
-{
+
+html, body {
   font-family: 'Poppins', sans-serif;
 }
 
 /* 2: a menu__sidebar osztályú elemek */
-__selector__
-{
+
+.menu__sidebar {
   position: fixed;
   background-color: #d1d1d1;
   left: 0;
@@ -26,8 +21,8 @@ __selector__
 }
 
 /* 3: a menu__content oszályú elemek */
-__selector__
-{
+
+.menu__content {
   transform: translateX(-100%);
   text-transform: lowercase;
   position: fixed;
@@ -43,30 +38,30 @@ __selector__
 }
 
 /* 4: a menu__items osztályú elemek */
-__selector__
-{
+
+.menu__items {
   font-size: 2em;
   margin: 0;
   padding: 0;
 }
 
 /* 5: a menu__item osztályú elemek */
-__selector__
-{
+
+.menu__item {
   list-style: none;
   margin: 8px 0;
 }
 
 /* 6: a menu__item-link osztályú elemek */
-__selector__
-{
+
+.menu__item-link {
   color: #555;
   text-decoration: none;
 }
 
 /* 7: a menu__hamburger osztályú elemek */
-__selector__
-{
+
+.menu__hamburger {
   display: block;
   position: relative;
   overflow: hidden;
@@ -84,8 +79,14 @@ __selector__
   transition: background 0.3s;
 }
 
-/* 8: azok a span elemek, amelyek menu__hamburger osztályú elemen belül vannak */
-__selector__
+/* 8: azok a menu__hamburger osztályú elemek, amelyek megkapják a fókuszt */
+.menu__hamburger:focus
+{
+  outline: none;
+}
+
+/* 9: azok a span elemek, amelyek menu__hamburger osztályú elemen belül vannak */
+.menu__hamburger span
 {
   display: block;
   position: absolute;
@@ -96,9 +97,9 @@ __selector__
   background: white;
 }
 
-/* 9: a menu__hamburger osztályú elemeken belül lévő span elemek 
-before vagy after pszeudo-elemei */
-__selector__
+/* 10: a menu__hamburger osztályú elemeken belül lévő span elemek 
+before vagy after pszeudo elemei */
+.menu__hamburger span::before, .menu__hamburger span::after
 {
   position: absolute;
   display: block;
@@ -109,74 +110,76 @@ __selector__
   content: "";
 }
 
-/* 10: a menu__hamburger osztályú elemeken belül lévő span elemek 
-before pszeudo-elemei */
-__selector__
+/* 11: a menu__hamburger osztályú elemeken belül lévő span elemek 
+before pszeudo elemei */
+.menu__hamburger span::before
 {
   top: -15px;
 }
 
-/* 11: a menu__hamburger osztályú elemeken belül lévő span elemek
- after pszeudo-elemei */
-__selector__
+/* 12: a menu__hamburger osztályú elemeken belül lévő span elemek
+ after pszeudo elemei */
+.menu__hamburger span::after
 {
   bottom: -15px;
 }
 
-/* 12: a menu__hamburger--htx osztályú elemeken belül lévő span elemek */
-__selector__
+/* 13: a menu__hamburger--htx osztályú elemeken belül lévő span elemek */
+.menu__hamburger--htx span
 {
   transition: background 0s 0.3s;
 }
 
-/* 13: a menu__hamburger--htx osztályú elemeken belül lévő span elemek 
-before vagy after pszeudo-elemei */
-__selector__
+/* 14: a menu__hamburger--htx osztályú elemeken belül lévő span elemek 
+before vagy after pszeudo elemei */
+.menu__hamburger--htx span::before,.menu__hamburger--htx span::after
 {
   transition-duration: 0.3s, 0.3s;
   transition-delay: 0.3s, 0s;
 }
 
-/* 14: a menu__hamburger--htx osztályú elemeken belül lévő span elemek 
-before pszeudo-elemei */
-__selector__
+/* 15: a menu__hamburger--htx osztályú elemeken belül lévő span elemek 
+before pszeudo elemei */
+.menu__hamburger--htx span::before
 {
   transition-property: top, transform;
 }
 
-/* 15: a menu__hamburger--htx osztályú elemeken belül lévő span elemek 
-after pszeudo-elemei */
-__selector__
+/* 16: a menu__hamburger--htx osztályú elemeken belül lévő span elemek 
+after pszeudo elemei */
+.menu__hamburger--htx span::after
 {
   transition-property: bottom, transform;
 }
 
-/* 16: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
+/* 17: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
  elemeken belül lévő span elemek */
-__selector__
+.menu__hamburger--htx.is-active span
 {
   background: none;
 }
 
-/* 17: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
- elemeken belül lévő span elemek before pszeudo-elemei */
-__selector__
+/* 18: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
+ elemeken belül lévő span elemek before pszeudo elemei */
+.menu__hamburger--htx.is-active span::before
 {
   top: 0;
   transform: rotate(45deg);
 }
 
-/* 18: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
- elemeken belül lévő span elemek after pszeudo-elemei */
-__selector__
+/* 19: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
+ elemeken belül lévő span elemek after pszeudo elemei */
+.menu__hamburger--htx.is-active span::after
 {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
-/* 19: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
- elemeken belül lévő span elemek before vagy after pszeudo-elemei */
-__selector__
+/* 20: a menu__hamburger--htx és az is-active osztályhoz egyszerre tartozó
+ elemeken belül lévő span elemek before vagy after pszeudo elemei */
+.menu__hamburger--htx.is-active span::before,
+.menu__hamburger--htx.is-active span::after
 {
   transition-delay: 0s, 0.3s;
 }
+
